@@ -1,0 +1,24 @@
+{
+  "appId": "com.keysort.app",
+  "productName": "KeySort",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "public/pwa-512x512.png"
+  ],
+  "win": {
+    "target": ["nsis"],
+    "icon": "public/pwa-512x512.png"
+  },
+  "nsis": {
+    "oneClick": true,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "KeySort"
+  }
+}
