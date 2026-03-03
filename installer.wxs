@@ -1,0 +1,77 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Package
+      Name="KeySort"
+      Manufacturer="BlazeStacks"
+      Version="1.0.0"
+      UpgradeCode="82d37f03-946f-4bf9-9d03-92880dc47a87"
+      InstallerVersion="500"
+      Scope="perMachine">
+
+    <MajorUpgrade
+        DowngradeErrorMessage="A newer version of KeySort is already installed." />
+
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Feature Id="MainFeature" Title="KeySort" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+  </Package>
+
+
+  <!-- INSTALL DIRECTORIES -->
+  <Fragment>
+    <StandardDirectory Id="ProgramFilesFolder">
+      <Directory Id="INSTALLFOLDER" Name="KeySort" />
+    </StandardDirectory>
+
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="AppProgramsFolder" Name="KeySort" />
+    </StandardDirectory>
+
+    <StandardDirectory Id="DesktopFolder" />
+  </Fragment>
+
+
+  <!-- FILES + SHORTCUTS -->
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+      <Component Id="MainExecutable" Guid="373613fb-3cb0-41e5-a084-dfa94591f1e6">
+
+        <!-- Main EXE -->
+        <File Id="KeySortExe"
+              Source="dist\keysort.exe"
+              KeyPath="yes" />
+
+        <!-- Start Menu Shortcut -->
+        <Shortcut
+            Id="StartMenuShortcut"
+            Directory="AppProgramsFolder"
+            Name="KeySort"
+            Target="[INSTALLFOLDER]keysort.exe"
+            WorkingDirectory="INSTALLFOLDER"
+            Advertise="no" />
+
+        <!-- Desktop Shortcut -->
+        <Shortcut
+            Id="DesktopShortcut"
+            Directory="DesktopFolder"
+            Name="KeySort"
+            Target="[INSTALLFOLDER]keysort.exe"
+            WorkingDirectory="INSTALLFOLDER"
+            Advertise="no" />
+
+        <!-- Clean uninstall -->
+        <RemoveFolder
+            Id="RemoveInstallFolder"
+            Directory="INSTALLFOLDER"
+            On="uninstall" />
+
+      </Component>
+
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>
