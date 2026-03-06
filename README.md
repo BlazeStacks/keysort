@@ -39,11 +39,11 @@ Clean. Structured. Human-readable.
 
 ## 🛠 Tech Stack
 
--   Vite\
--   React (SWC)\
--   Electron\
--   electron-builder (NSIS installer)\
--   PapaParse (CSV parsing)\
+-   Vite
+-   React (SWC)
+-   Electron
+-   electron-builder (NSIS installer)
+-   PapaParse (CSV parsing)
 -   TypeScript
 
 ------------------------------------------------------------------------
@@ -109,9 +109,9 @@ Includes: - win-unpacked/ - .exe - .msi installer
 
 KeySort runs completely locally.
 
--   No external API calls\
--   No cloud sync\
--   No tracking\
+-   No external API calls
+-   No cloud sync
+-   No tracking
 -   No data collection
 
 All processing happens offline on your machine.
@@ -122,8 +122,8 @@ All processing happens offline on your machine.
 
 This tool is intended for organizing password export files.
 
-Always: - Store exported password files securely\
-- Delete temporary exports after use\
+Always: - Store exported password files securely
+- Delete temporary exports after use
 - Use encrypted storage for backups
 
 ------------------------------------------------------------------------
